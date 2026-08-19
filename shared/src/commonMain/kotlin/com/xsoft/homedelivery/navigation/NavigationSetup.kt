@@ -1,4 +1,4 @@
-package com.xsoft.newexperienciaunica.navigation
+package com.xsoft.homedelivery.navigation
 
 import androidx.compose.animation.ContentTransform
 import androidx.compose.animation.core.tween
@@ -15,9 +15,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
-import com.xsoft.newexperienciaunica.navigation.state.TOP_LEVEL_ROUTES
-import com.xsoft.newexperienciaunica.navigation.state.rememberNavigationState
-import com.xsoft.newexperienciaunica.navigation.state.toEntries
+import com.xsoft.homedelivery.navigation.state.TOP_LEVEL_ROUTES
+import com.xsoft.homedelivery.navigation.state.rememberNavigationState
+import com.xsoft.homedelivery.navigation.state.toEntries
 import com.xsoft.my_routes.navigation.HomeRoute
 import com.xsoft.history.navigation.historySection
 import com.xsoft.my_routes.navigation.myRoutesSection

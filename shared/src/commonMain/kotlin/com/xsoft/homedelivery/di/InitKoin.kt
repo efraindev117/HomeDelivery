@@ -1,4 +1,4 @@
-package com.xsoft.newexperienciaunica.di
+package com.xsoft.homedelivery.di
 
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin

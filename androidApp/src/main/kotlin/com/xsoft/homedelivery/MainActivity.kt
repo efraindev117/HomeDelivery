@@ -1,4 +1,4 @@
-package com.xsoft.newexperienciaunica
+package com.xsoft.homedelivery
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

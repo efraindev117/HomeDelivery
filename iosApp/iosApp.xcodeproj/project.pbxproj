@@ -11,7 +11,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC883E177C1EC36FDBE0568B /* NewExperienciaUnica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewExperienciaUnica.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC883E177C1EC36FDBE0568B /* HomeDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -55,7 +55,7 @@
 		72C6A4D6E5A8C07F501EB458 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC883E177C1EC36FDBE0568B /* NewExperienciaUnica.app */,
+				BC883E177C1EC36FDBE0568B /* HomeDelivery.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,7 +93,7 @@
 				7A65B9012FEEFDFC00293A44 /* GoogleMaps */,
 			);
 			productName = iosApp;
-			productReference = BC883E177C1EC36FDBE0568B /* NewExperienciaUnica.app */;
+			productReference = BC883E177C1EC36FDBE0568B /* HomeDelivery.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

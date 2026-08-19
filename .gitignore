@@ -1,19 +1,45 @@
+# IntelliJ / Android Studio
 *.iml
+.idea
+
+# Kotlin / Gradle
 .kotlin
 .gradle
 **/build/
-xcuserdata
 !src/**/build/
+
+# Android
 local.properties
-.idea
-.DS_Store
 captures
 .externalNativeBuild
 .cxx
+
+# macOS
+.DS_Store
+
+# Xcode / iOS
+xcuserdata
+*.xcuserstate
+
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcodeproj/project.xcworkspace/
 !*.xcworkspace/contents.xcworkspacedata
+
 **/xcshareddata/WorkspaceSettings.xcsettings
+
+# Kotlin Native
+.konan/
+**/.konan/
+
+# Node
 node_modules/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log

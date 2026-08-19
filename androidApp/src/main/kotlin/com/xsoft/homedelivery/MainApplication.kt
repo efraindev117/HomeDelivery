@@ -1,7 +1,7 @@
-package com.xsoft.newexperienciaunica
+package com.xsoft.homedelivery
 
 import android.app.Application
-import com.xsoft.newexperienciaunica.di.initKoin
+import com.xsoft.homedelivery.di.initKoin
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 

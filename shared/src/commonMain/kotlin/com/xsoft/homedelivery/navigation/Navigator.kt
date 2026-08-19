@@ -1,7 +1,7 @@
-package com.xsoft.newexperienciaunica.navigation
+package com.xsoft.homedelivery.navigation
 
 import androidx.navigation3.runtime.NavKey
-import com.xsoft.newexperienciaunica.navigation.state.NavigationState
+import com.xsoft.homedelivery.navigation.state.NavigationState
 
 class Navigator(val state: NavigationState){
     fun navigate(route: NavKey){

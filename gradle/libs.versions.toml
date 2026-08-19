@@ -112,24 +112,24 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
 # KMP
-ieu-kotlin-multiplatform = { id = "xsoft.experiencia.unica.kotlin.multiplatform" }
-ieu-android-kmp-library = { id = "xsoft.experiencia.unica.android.kmp.library" }
+ieu-kotlin-multiplatform = { id = "xsoft.homedelivery.kotlin.multiplatform" }
+ieu-android-kmp-library = { id = "xsoft.homedelivery.android.kmp.library" }
 
 # Compose
-ieu-compose-multiplatform = { id = "xsoft.experiencia.unica.compose.multiplatform" }
+ieu-compose-multiplatform = { id = "xsoft.homedelivery.compose.multiplatform" }
 
 # Android only
-ieu-android-application = { id = "xsoft.experiencia.unica.android.application" }
-ieu-android-application-compose = { id = "xsoft.experiencia.unica.android.application.compose" }
-ieu-android-library = { id = "xsoft.experiencia.unica.android.library" }
-ieu-android-library-compose = { id = "xsoft.experiencia.unica.android.library.compose" }
-ieu-android-feature = { id = "xsoft.experiencia.unica.android.feature" }
+ieu-android-application = { id = "xsoft.homedeliveryandroid.application" }
+ieu-android-application-compose = { id = "xsoft.homedelivery.android.application.compose" }
+ieu-android-library = { id = "xsoft.homedelivery.android.library" }
+ieu-android-library-compose = { id = "xsoft.homedelivery.android.library.compose" }
+ieu-android-feature = { id = "xsoft.homedelivery.android.feature" }
 
 # External plugins
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 androidx-room = { id = "androidx.room", version.ref = "room" }
 
 # Project convention plugins
-ieu-ksp = { id = "xsoft.experiencia.unica.ksp" }
-ieu-room = { id = "xsoft.experiencia.unica.room" }
-ieu-koin = { id = "xsoft.experiencia.unica.koin" }
+ieu-ksp = { id = "xsoft.homedelivery.ksp" }
+ieu-room = { id = "xsoft.homedelivery.room" }
+ieu-koin = { id = "xsoft.homedelivery.koin" }
