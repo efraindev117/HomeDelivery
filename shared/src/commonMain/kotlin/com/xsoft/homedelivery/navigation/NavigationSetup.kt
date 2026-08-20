@@ -5,16 +5,15 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Icon
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
+import com.xsoft.designsystem.component.HdBottomNav
+import com.xsoft.designsystem.component.HdBottomNavItem
+import com.xsoft.designsystem.theme.HdColors
 import com.xsoft.homedelivery.navigation.state.TOP_LEVEL_ROUTES
 import com.xsoft.homedelivery.navigation.state.rememberNavigationState
 import com.xsoft.homedelivery.navigation.state.toEntries
@@ -37,23 +36,20 @@ fun NavigationSetup() {
         supportSection(onSubRouteClick = {})
     }
 
-    Scaffold(bottomBar = {
-        NavigationBar {
-            TOP_LEVEL_ROUTES.forEach { (key, value) ->
-                val isSelected = key == navigationState.topLevelRoute
-                NavigationBarItem(
-                    selected = isSelected,
-                    onClick = { navigator.navigate(key) },
-                    icon = {
-                        Icon(
-                            imageVector = value.icon,
-                            contentDescription = "Titulo de los items del bottom Bar navigation"
-                        )
-                    },
-                    label = { Text(value.title) }
+    Scaffold(
+        containerColor = HdColors.canvas,
+        bottomBar = {
+        HdBottomNav(
+            items = TOP_LEVEL_ROUTES.map { (key, value) ->
+                HdBottomNavItem(
+                    key = key,
+                    label = value.title,
+                    icon = value.icon,
                 )
-            }
-        }
+            },
+            selectedKey = navigationState.topLevelRoute,
+            onItemSelected = { navigator.navigate(it) },
+        )
     }) { paddingValues ->
         NavDisplay(
             entries = navigationState.toEntries(entryProvider),
