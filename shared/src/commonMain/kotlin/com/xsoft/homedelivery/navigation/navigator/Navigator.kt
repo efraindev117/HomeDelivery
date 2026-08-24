@@ -1,4 +1,4 @@
-package com.xsoft.homedelivery.navigation
+package com.xsoft.homedelivery.navigation.navigator
 
 import androidx.navigation3.runtime.NavKey
 import com.xsoft.homedelivery.navigation.state.NavigationState
@@ -11,7 +11,6 @@ class Navigator(val state: NavigationState){
             state.backStacks[state.topLevelRoute]?.add(route)
         }
     }
-
     fun goBack(){
         val currentStack = state.backStacks[state.topLevelRoute] ?:
         error("Stack for ${state.topLevelRoute} not found")
