@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.xsoft.domain"
+    namespace = "com.maypo.domain"
     compileSdk {
         version = release(36)
     }

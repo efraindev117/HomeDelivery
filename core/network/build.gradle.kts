@@ -6,7 +6,7 @@ plugins {
 
 kotlin {
     android {
-        namespace = "com.xsoft.core.network"
+        namespace = "com.maypo.core.network"
     }
     sourceSets{
         commonMain.dependencies {

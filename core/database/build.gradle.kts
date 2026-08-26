@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.xsoft.database"
+    namespace = "com.maypo.database"
     compileSdk {
         version = release(37)
     }

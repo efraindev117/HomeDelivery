@@ -6,7 +6,7 @@ plugins {
 
 kotlin {
     android {
-        namespace = "com.xsoft.history"
+        namespace = "com.maypo.history"
     }
 
     sourceSets {

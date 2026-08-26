@@ -1,30 +1,24 @@
 plugins {
-    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.ieu.android.feature)
+    alias(libs.plugins.ieu.compose.multiplatform)
+    alias(libs.plugins.kotlinSerialization)
 }
 
-android {
-    namespace = "com.xsoft.login"
-    compileSdk {
-        version = release(37)
+
+kotlin {
+
+    android {
+        namespace = "com.maypo.login"
     }
+    sourceSets {
+        commonMain.dependencies {
 
-    defaultConfig {
-        minSdk = 33
+        }
+        androidMain.dependencies {
+            implementation(libs.microsoft.msal)
+        }
+        iosMain.dependencies {
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-
-}
-
-dependencies {
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(libs.androidx.testExt.junit)
 }

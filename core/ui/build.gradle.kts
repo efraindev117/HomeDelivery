@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.xsoft.ui"
+    namespace = "com.maypo.ui"
     compileSdk {
         version = release(37)
     }

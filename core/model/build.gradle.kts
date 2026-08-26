@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.xsoft.model"
+    namespace = "com.maypo.model"
     compileSdk {
         version = release(37)
     }
