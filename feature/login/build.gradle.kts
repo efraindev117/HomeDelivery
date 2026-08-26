@@ -8,7 +8,7 @@ plugins {
 kotlin {
 
     android {
-        namespace = "com.maypo.login"
+        namespace = "com.maypo.auth"
     }
     sourceSets {
         commonMain.dependencies {

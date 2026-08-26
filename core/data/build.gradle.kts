@@ -5,11 +5,11 @@ plugins {
 
 kotlin {
     android {
-        namespace = "com.maypo.domain"
+        namespace = "com.maypo.data"
     }
     sourceSets{
         commonMain.dependencies {
-            implementation(projects.core.common)
+
         }
         androidMain.dependencies {
 
@@ -19,3 +19,5 @@ kotlin {
         }
     }
 }
+
+

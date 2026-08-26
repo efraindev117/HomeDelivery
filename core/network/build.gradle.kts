@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.ieu.kotlin.multiplatform)
     alias(libs.plugins.ieu.koin)
-
 }
 
 kotlin {

@@ -37,9 +37,12 @@ include(":core:designsystem")
 include(":core:ui")
 include(":core:model")
 include(":core:domain")
+include(":core:database")
+include(":core:common")
 
 include(":feature:my-routes")
 include(":feature:history")
 include(":feature:support")
 include(":feature:login")
-include(":core:database")
+
+include(":core:data")
