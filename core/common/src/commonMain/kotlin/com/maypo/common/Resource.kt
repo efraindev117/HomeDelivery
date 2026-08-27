@@ -10,3 +10,14 @@ sealed interface NetworkResult<out T> {
         val error: Throwable,
     ) : NetworkResult<Nothing>
 }
+
+sealed interface AuthResult {
+
+    data object CodeRequired : AuthResult
+
+    data object Authenticated : AuthResult
+
+    data object CodeResent : AuthResult
+
+    data object SignedOut : AuthResult
+}

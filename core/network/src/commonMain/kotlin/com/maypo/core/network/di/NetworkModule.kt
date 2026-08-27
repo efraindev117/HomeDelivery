@@ -1,7 +1,5 @@
 package com.maypo.core.network.di
 
-import org.koin.dsl.module
+import org.koin.core.module.Module
 
-val networkModule = module {
-
-}
+expect val networkModule: Module

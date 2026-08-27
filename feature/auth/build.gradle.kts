@@ -1,16 +1,18 @@
 plugins {
-    alias(libs.plugins.ieu.kotlin.multiplatform)
+    alias(libs.plugins.ieu.android.feature)
+    alias(libs.plugins.ieu.compose.multiplatform)
+    alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.ieu.koin)
 }
 
 kotlin {
     android {
-        namespace = "com.maypo.domain"
+        namespace = "com.maypo.auth"
     }
-    sourceSets{
+    sourceSets {
         commonMain.dependencies {
+            implementation(projects.core.domain)
             implementation(projects.core.common)
-            implementation(projects.core.data)
         }
         androidMain.dependencies {
 
