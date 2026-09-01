@@ -1,6 +1,8 @@
 package com.maypo.core.network
 
 import com.maypo.common.AuthResult
+import com.maypo.common.ApiError
+import com.maypo.common.AppLogger
 import com.maypo.common.NetworkResult
 import com.maypo.core.network.repository.INetworkAuthDataSource
 import com.microsoft.identity.nativeauth.INativeAuthPublicClientApplication
@@ -45,16 +47,25 @@ class MsalNetworkAuthDataSource(private val authClient: INativeAuthPublicClientA
 
             is SignInError -> {
                 codeRequiredResult = null
+                AppLogger.error(
+                    tag = "Auth",
+                    message = "MSAL sign-in failed",
+                )
 
                 NetworkResult.Failure(
-                   error(message = "")
+                    error = ApiError.Authentication(reason = "msal_sign_in"),
                 )
             }
 
             else -> {
                 codeRequiredResult = null
+                AppLogger.error(
+                    tag = "Auth",
+                    message = "unrecognized MSAL sign-in result",
+                )
 
-                NetworkResult.Failure(error(message = ""),
+                NetworkResult.Failure(
+                    error = ApiError.Unknown,
                 )
             }
         }

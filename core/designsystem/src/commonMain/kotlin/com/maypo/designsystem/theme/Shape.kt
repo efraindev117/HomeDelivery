@@ -20,6 +20,7 @@ object HdShapeTokens {
     val large = RoundedCornerShape(10.dp)
     val card = RoundedCornerShape(10.dp)
     val extraLarge = RoundedCornerShape(14.dp)
+    val button = RoundedCornerShape(12.dp)
     val pill = RoundedCornerShape(percent = 50)
     val circle = CircleShape
 }

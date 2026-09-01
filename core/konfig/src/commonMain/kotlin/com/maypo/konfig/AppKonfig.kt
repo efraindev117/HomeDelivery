@@ -7,4 +7,7 @@ object AppKonfig {
 
     val baseUrl: String
         get() = BuildKonfig.baseUrl
+
+    val loggingEnabled: Boolean
+        get() = BuildKonfig.loggingEnabled
 }

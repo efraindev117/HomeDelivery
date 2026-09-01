@@ -122,17 +122,17 @@ private fun sizeTokens(size: HdButtonSize): ButtonSizeTokens {
         HdButtonSize.Large -> ButtonSizeTokens(
             padding = PaddingValues(horizontal = HdSpacing.xxl, vertical = HdSpacing.xl),
             textStyle = typography.titleLarge,
-            corner = HdShapeTokens.small,
+            corner = HdShapeTokens.button,
         )
         HdButtonSize.Medium -> ButtonSizeTokens(
             padding = PaddingValues(horizontal = HdSpacing.xxl, vertical = HdSpacing.lg),
             textStyle = typography.titleMedium,
-            corner = HdShapeTokens.small,
+            corner = HdShapeTokens.button,
         )
         HdButtonSize.Compact -> ButtonSizeTokens(
             padding = PaddingValues(horizontal = HdSpacing.xl, vertical = HdSpacing.md),
             textStyle = typography.labelLarge,
-            corner = HdShapeTokens.small,
+            corner = HdShapeTokens.button,
         )
     }
 }

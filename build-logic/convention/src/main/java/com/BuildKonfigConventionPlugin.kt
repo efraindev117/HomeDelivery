@@ -1,5 +1,6 @@
 package com
 
+import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.BOOLEAN
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
 import com.codingfeline.buildkonfig.gradle.BuildKonfigExtension
 import org.gradle.api.Plugin
@@ -26,45 +27,27 @@ class BuildKonfigConventionPlugin : Plugin<Project> {
                 packageName.set("com.maypo.konfig")
 
                 defaultConfigs {
-                    buildConfigField(
-                        STRING,
-                        "environment",
-                        "prod",
-                    )
-
-                    buildConfigField(
-                        STRING,
-                        "baseUrl",
-                        baseUrlProd,
-                    )
+                    buildConfigField(STRING, "environment", "prod")
+                    buildConfigField(STRING, "baseUrl", baseUrlProd)
+                    buildConfigField(BOOLEAN, "loggingEnabled", "false")
                 }
 
                 defaultConfigs("dev") {
-                    buildConfigField(
-                        STRING,
-                        "environment",
-                        "dev",
-                    )
-
-                    buildConfigField(
-                        STRING,
-                        "baseUrl",
-                        baseUrlDev,
-                    )
+                    buildConfigField(STRING, "environment", "dev")
+                    buildConfigField(STRING, "baseUrl", baseUrlDev)
+                    buildConfigField(BOOLEAN, "loggingEnabled", "true")
                 }
 
                 defaultConfigs("qa") {
-                    buildConfigField(
-                        STRING,
-                        "environment",
-                        "qa",
-                    )
+                    buildConfigField(STRING, "environment", "qa")
+                    buildConfigField(STRING, "baseUrl", baseUrlQa)
+                    buildConfigField(BOOLEAN, "loggingEnabled", "true")
+                }
 
-                    buildConfigField(
-                        STRING,
-                        "baseUrl",
-                        baseUrlQa,
-                    )
+                defaultConfigs("prod") {
+                    buildConfigField(STRING, "environment", "prod")
+                    buildConfigField(STRING, "baseUrl", baseUrlProd)
+                    buildConfigField(BOOLEAN, "loggingEnabled", "false")
                 }
             }
         }
