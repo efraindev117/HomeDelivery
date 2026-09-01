@@ -6,6 +6,7 @@
     kotlin {
         android {
             namespace = "com.maypo.common"
+            withHostTest {}
         }
         sourceSets{
             commonMain.dependencies {

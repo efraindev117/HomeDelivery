@@ -1,6 +1,6 @@
 package com.maypo.auth.di
 
-import com.maypo.auth.AuthViewModel
+import com.maypo.auth.presentation.AuthViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 

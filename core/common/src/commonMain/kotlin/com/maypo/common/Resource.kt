@@ -7,7 +7,7 @@ sealed interface NetworkResult<out T> {
     ) : NetworkResult<T>
 
     data class Failure(
-        val error: Throwable,
+        val error: ApiError,
     ) : NetworkResult<Nothing>
 }
 
