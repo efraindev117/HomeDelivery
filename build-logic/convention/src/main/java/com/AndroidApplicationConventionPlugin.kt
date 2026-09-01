@@ -22,7 +22,9 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
 
         pluginManager.apply(libs.pluginId("androidApplication"))
 
-        val environment = appEnvironment()
+        val environment = providers
+            .gradleProperty("buildkonfig.flavor")
+            .getOrElse("prod")
 
         val buildId = providers
             .gradleProperty("BUILD_ID")
@@ -41,8 +43,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 targetSdk = libs.versionInt("android-targetSdk")
                 versionCode = buildId
                 versionName = "1.0"
-                testInstrumentationRunner =
-                    "androidx.test.runner.AndroidJUnitRunner"
+                testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
             }
 
             flavorDimensions += "environment"
@@ -73,22 +74,19 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
         }
 
         extensions.configure<ApplicationAndroidComponentsExtension> {
-            beforeVariants(selector().all()) { variantBuilder ->
-                val variantEnvironment = variantBuilder.productFlavors
+            beforeVariants(selector().all()) { variant ->
+                val variantEnvironment = variant.productFlavors
                     .firstOrNull { (dimension, _) ->
                         dimension == "environment"
                     }
                     ?.second
-
                 if (
                     variantEnvironment != null &&
-                    variantEnvironment != environment.flavorName
+                    variantEnvironment != environment
                 ) {
-                    variantBuilder.enable = false
+                    variant.enable = false
                 }
             }
         }
-
-        // ...
     }
 }
