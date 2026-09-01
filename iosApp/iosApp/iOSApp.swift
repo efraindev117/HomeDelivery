@@ -5,9 +5,6 @@ import shared
 struct iOSApp: App {
 
     init(){
-        #if DEBUG
-        AppLogger.shared.configure(enabled: true)
-        #endif
         KoinModuleKt.doInitKoinIos()
     }
 
