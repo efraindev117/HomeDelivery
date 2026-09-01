@@ -52,3 +52,18 @@ internal fun VersionCatalog.pluginId(alias: String): String =
 internal fun VersionCatalog.library(alias: String) =
     findLibrary(alias)
         .get()
+
+internal fun Project.appEnvironment(): AppEnvironment {
+
+    val environment = providers
+        .gradleProperty("buildkonfig.flavor")
+        .getOrElse("prod")
+
+    return AppEnvironment.entries.firstOrNull {
+        it.flavorName == environment
+    } ?: error(
+        "Invalid buildkonfig.flavor='$environment'. " +
+                "Valid values: dev, qa, prod."
+    )
+}
+

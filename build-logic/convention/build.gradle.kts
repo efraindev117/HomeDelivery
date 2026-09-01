@@ -19,10 +19,16 @@ dependencies {
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.compose.gradlePlugin)
     compileOnly(libs.androidx.room.gradlePlugin)
+    implementation(libs.buildkonfig.gradle.plugin)
 }
 
 gradlePlugin {
     plugins {
+        register("buildKonfig"){
+            id = libs.plugins.home.delivery.build.konfig.plugin.get().pluginId
+            implementationClass = "com.BuildKonfigConventionPlugin"
+        }
+
         register("kotlinMultiplatform") {
             id = libs.plugins.ieu.kotlin.multiplatform.get().pluginId
             implementationClass = "com.KotlinMultiplatformConventionPlugin"

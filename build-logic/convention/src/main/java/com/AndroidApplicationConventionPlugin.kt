@@ -1,6 +1,9 @@
 package com
 
 import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.api.variant.ApplicationAndroidComponentsExtension
+import com.maypo.convention.AppEnvironment
+import com.maypo.convention.appEnvironment
 import com.maypo.convention.library
 import com.maypo.convention.libs
 import com.maypo.convention.pluginId
@@ -14,25 +17,52 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
+
     override fun apply(target: Project) = with(target) {
+
         pluginManager.apply(libs.pluginId("androidApplication"))
 
+        val environment = appEnvironment()
+
+        val buildId = providers
+            .gradleProperty("BUILD_ID")
+            .orNull
+            ?.toIntOrNull()
+            ?: 1
+
         extensions.configure<ApplicationExtension> {
+
             namespace = "com.maypo.homedelivery"
             compileSdk = libs.versionInt("android-compileSdk")
+
             defaultConfig {
                 applicationId = "com.maypo.homedelivery"
                 minSdk = libs.versionInt("android-minSdk")
                 targetSdk = libs.versionInt("android-targetSdk")
-                versionCode = 1
+                versionCode = buildId
                 versionName = "1.0"
-                testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+                testInstrumentationRunner =
+                    "androidx.test.runner.AndroidJUnitRunner"
+            }
+
+            flavorDimensions += "environment"
+            productFlavors {
+                AppEnvironment.entries.forEach { environment ->
+                    create(environment.flavorName) {
+                        dimension = "environment"
+                        environment.applicationIdSuffix?.let {
+                            applicationIdSuffix = it
+                        }
+                        environment.versionNameSuffix?.let {
+                            versionNameSuffix = it
+                        }
+                    }
+                }
             }
 
             compileOptions {
                 sourceCompatibility = JavaVersion.VERSION_17
                 targetCompatibility = JavaVersion.VERSION_17
-                isCoreLibraryDesugaringEnabled = true
             }
 
             packaging {
@@ -42,17 +72,23 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             }
         }
 
-        extensions.configure<KotlinAndroidProjectExtension> {
-            compilerOptions {
-                jvmTarget.set(JvmTarget.JVM_17)
+        extensions.configure<ApplicationAndroidComponentsExtension> {
+            beforeVariants(selector().all()) { variantBuilder ->
+                val variantEnvironment = variantBuilder.productFlavors
+                    .firstOrNull { (dimension, _) ->
+                        dimension == "environment"
+                    }
+                    ?.second
+
+                if (
+                    variantEnvironment != null &&
+                    variantEnvironment != environment.flavorName
+                ) {
+                    variantBuilder.enable = false
+                }
             }
         }
 
-        dependencies {
-            add("coreLibraryDesugaring", libs.library("android-desugarJdkLibs"))
-            add("testImplementation", libs.library("junit"))
-            add("androidTestImplementation", libs.library("androidx-testExt-junit"))
-            add("androidTestImplementation", libs.library("androidx-espresso-core"))
-        }
+        // ...
     }
 }

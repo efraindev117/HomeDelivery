@@ -55,3 +55,4 @@ include(":feature:support")
 include(":feature:auth")
 
 include(":core:data")
+include(":core:konfig")
