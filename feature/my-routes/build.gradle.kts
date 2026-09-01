@@ -6,7 +6,7 @@ plugins {
 
 kotlin {
     android {
-        namespace = "com.xsoft.my_routes"
+        namespace = "com.maypo.my_routes"
     }
 
     sourceSets {

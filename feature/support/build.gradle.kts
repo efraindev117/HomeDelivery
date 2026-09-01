@@ -7,7 +7,7 @@ plugins {
 kotlin {
 
 android {
-    namespace = "com.xsoft.support"
+    namespace = "com.maypo.support"
 }
     sourceSets {
         commonMain.dependencies {
@@ -20,8 +20,4 @@ android {
 
         }
     }
-}
-
-dependencies {
-
 }

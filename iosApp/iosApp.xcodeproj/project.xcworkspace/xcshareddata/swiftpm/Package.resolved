@@ -1,5 +1,5 @@
 {
-  "originHash" : "fe5dd08882d08507f16493adf883e323b1dd5a821ac629f6777702bda6b2ba4e",
+  "originHash" : "1c5d42ca9fcbdaea157c81b8ae28604c89d9a666b234dd6be01d56c578ce8f7b",
   "pins" : [
     {
       "identity" : "ios-maps-sdk",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "a951b24ac0ca7720f87d4be3d5bd539552d13882",
         "version" : "10.15.0"
+      }
+    },
+    {
+      "identity" : "microsoft-authentication-library-for-objc",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AzureAD/microsoft-authentication-library-for-objc",
+      "state" : {
+        "revision" : "d54e9653f94883a896af533133888be1c2ef5c75",
+        "version" : "2.15.0"
       }
     }
   ],

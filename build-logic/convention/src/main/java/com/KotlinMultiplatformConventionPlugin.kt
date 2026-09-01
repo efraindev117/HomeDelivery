@@ -1,9 +1,9 @@
 package com
 
-import com.xsoft.convention.configureAndroidKmpLibrary
-import com.xsoft.convention.defaultKmpNamespace
-import com.xsoft.convention.libs
-import com.xsoft.convention.versionInt
+import com.maypo.convention.configureAndroidKmpLibrary
+import com.maypo.convention.defaultKmpNamespace
+import com.maypo.convention.libs
+import com.maypo.convention.versionInt
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

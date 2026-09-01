@@ -1,8 +1,8 @@
 package com
 
-import com.xsoft.convention.library
-import com.xsoft.convention.libs
-import com.xsoft.convention.pluginId
+import com.maypo.convention.library
+import com.maypo.convention.libs
+import com.maypo.convention.pluginId
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

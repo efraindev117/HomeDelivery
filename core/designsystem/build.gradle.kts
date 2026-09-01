@@ -5,7 +5,7 @@ plugins {
 
 kotlin {
     android {
-        namespace = "com.xsoft.designsystem"
+        namespace = "com.maypo.designsystem"
     }
     sourceSets {
         commonMain.dependencies {

@@ -26,6 +26,15 @@ dependencyResolutionManagement {
             }
         }
         mavenCentral()
+        maven {
+            url = uri(
+                "https://pkgs.dev.azure.com/MicrosoftDeviceSDK/DuoSDK-Public/_packaging/Duo-SDK-Feed/maven/v1"
+            )
+
+            content {
+                includeGroup("com.microsoft.device.display")
+            }
+        }
     }
 }
 
@@ -37,9 +46,12 @@ include(":core:designsystem")
 include(":core:ui")
 include(":core:model")
 include(":core:domain")
+include(":core:database")
+include(":core:common")
 
 include(":feature:my-routes")
 include(":feature:history")
 include(":feature:support")
-include(":feature:login")
-include(":core:database")
+include(":feature:auth")
+
+include(":core:data")

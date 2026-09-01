@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A65B9022FEEFDFC00293A44 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 7A65B9012FEEFDFC00293A44 /* GoogleMaps */; };
+		7ADF3F08303FB75600ED6F69 /* MSAL in Frameworks */ = {isa = PBXBuildFile; productRef = 7ADF3F07303FB75600ED6F69 /* MSAL */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A65B9022FEEFDFC00293A44 /* GoogleMaps in Frameworks */,
+				7ADF3F08303FB75600ED6F69 /* MSAL in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +93,7 @@
 			name = iosApp;
 			packageProductDependencies = (
 				7A65B9012FEEFDFC00293A44 /* GoogleMaps */,
+				7ADF3F07303FB75600ED6F69 /* MSAL */,
 			);
 			productName = iosApp;
 			productReference = BC883E177C1EC36FDBE0568B /* HomeDelivery.app */;
@@ -122,6 +125,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				7A65B9002FEEFDFC00293A44 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+				7ADF3F06303FB75600ED6F69 /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 72C6A4D6E5A8C07F501EB458 /* Products */;
@@ -182,6 +186,7 @@
 				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iosApp/iosApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
@@ -333,6 +338,7 @@
 				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iosApp/iosApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
@@ -387,6 +393,14 @@
 				minimumVersion = 10.15.0;
 			};
 		};
+		7ADF3F06303FB75600ED6F69 /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AzureAD/microsoft-authentication-library-for-objc";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.15.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -394,6 +408,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7A65B9002FEEFDFC00293A44 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
 			productName = GoogleMaps;
+		};
+		7ADF3F07303FB75600ED6F69 /* MSAL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7ADF3F06303FB75600ED6F69 /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */;
+			productName = MSAL;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
