@@ -31,11 +31,11 @@ kotlin {
         }
 
         androidMain.dependencies {
-            // Android-only si necesitas algo aquí
+            // Android-only
         }
 
         iosMain.dependencies {
-            // iOS-only si necesitas algo aquí
+            // iOS-only
         }
     }
 }

@@ -11,6 +11,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import com.maypo.common.AuthResult
 import com.maypo.common.NetworkResult
 import org.koin.compose.viewmodel.koinViewModel
@@ -69,4 +70,10 @@ fun AuthScreen() {
         }
     )
 
+}
+
+@Preview
+@Composable
+fun testa(){
+    AuthScreen()
 }

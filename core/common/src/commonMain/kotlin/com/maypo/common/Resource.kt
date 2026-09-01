@@ -11,6 +11,15 @@ sealed interface NetworkResult<out T> {
     ) : NetworkResult<Nothing>
 }
 
+sealed interface AuthState {
+
+    data object Loading : AuthState
+
+    data object Authenticated : AuthState
+
+    data object Unauthenticated : AuthState
+}
+
 sealed interface AuthResult {
 
     data object CodeRequired : AuthResult

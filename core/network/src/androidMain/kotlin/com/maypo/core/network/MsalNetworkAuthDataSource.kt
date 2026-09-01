@@ -13,6 +13,10 @@ class MsalNetworkAuthDataSource(private val authClient: INativeAuthPublicClientA
 
     private var codeRequiredResult: SignInResult.CodeRequired? = null
 
+    override suspend fun getAuthState(): AuthResult {
+        TODO("Not yet implemented")
+    }
+
     override suspend fun signIn(
         email: String,
     ): NetworkResult<AuthResult> {
