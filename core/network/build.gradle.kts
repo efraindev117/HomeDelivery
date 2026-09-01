@@ -7,25 +7,29 @@ plugins {
 kotlin {
     android {
         namespace = "com.maypo.core.network"
+
         androidResources {
             enable = true
         }
     }
 
-    sourceSets{
+    sourceSets {
         commonMain.dependencies {
             implementation(projects.core.common)
+            implementation(projects.core.konfig)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.serialization.kotlinx.json)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization.json)
         }
+
         androidMain.dependencies {
             implementation(libs.microsoft.msal)
             implementation(libs.ktor.client.okhttp)
             implementation(libs.kotlinx.coroutines.android)
         }
+
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
         }

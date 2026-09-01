@@ -2,19 +2,30 @@ package com.maypo.core.network.client
 
 import com.maypo.common.ApiError
 import com.maypo.common.AppLogger
+import com.maypo.common.Constants.CORRELATION_ID_HEADER
 import com.maypo.common.NetworkResult
+import com.maypo.konfig.AppKonfig
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
+import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.plugins.HttpResponseValidator
 import io.ktor.client.plugins.ResponseException
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.client.plugins.defaultRequest
+import io.ktor.client.request.accept
+import io.ktor.client.request.header
 import io.ktor.client.statement.HttpResponse
+import io.ktor.http.ContentType
 import io.ktor.http.HttpStatusCode
+import io.ktor.http.contentType
 import io.ktor.serialization.kotlinx.json.json
+import kotlin.uuid.ExperimentalUuidApi
+import kotlin.uuid.Uuid
 import kotlinx.coroutines.CancellationException
 import kotlinx.serialization.json.Json
 
-fun createSecureHttpClient(): HttpClient = HttpClient {
+@OptIn(ExperimentalUuidApi::class)
+fun createSecureHttpClient(engine: HttpClientEngine): HttpClient = HttpClient(engine) {
     install(ContentNegotiation) {
         json(
             Json {
@@ -22,6 +33,12 @@ fun createSecureHttpClient(): HttpClient = HttpClient {
                 explicitNulls = false
             },
         )
+    }
+    defaultRequest {
+        url(AppKonfig.baseUrl)
+        accept(ContentType.Application.Json)
+        contentType(ContentType.Application.Json)
+        header(CORRELATION_ID_HEADER, Uuid.random().toString())
     }
     HttpResponseValidator {
         validateResponse { response ->
