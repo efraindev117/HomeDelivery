@@ -18,18 +18,24 @@ kotlin {
         commonMain.dependencies {
             implementation(libs.jetbrains.navigation3.ui)
             implementation(libs.kotlinxSerializationCore)
+            //features
+            implementation(projects.feature.auth)
             implementation(projects.feature.history)
             implementation(projects.feature.myRoutes)
             implementation(projects.feature.support)
+            // core
+            implementation(projects.core.common)
             implementation(projects.core.designsystem)
+            implementation(projects.core.data)
+            implementation(projects.core.domain)
         }
 
         androidMain.dependencies {
-            // Android-only si necesitas algo aquí
+            // Android-only
         }
 
         iosMain.dependencies {
-            // iOS-only si necesitas algo aquí
+            // iOS-only
         }
     }
 }

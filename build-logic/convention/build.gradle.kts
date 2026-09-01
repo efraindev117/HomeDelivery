@@ -5,7 +5,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.xsoft.buildlogic.convention"
+group = "com.maypo.buildlogic.convention"
 
 tasks {
     validatePlugins {

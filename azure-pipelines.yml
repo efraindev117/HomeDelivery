@@ -1,0 +1,34 @@
+trigger:
+  batch: true
+  branches:
+    include:
+      - main
+      - develop
+      - release/*
+      - hotfix/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: JavaToolInstaller@0
+    displayName: 'Configure JDK 17'
+    inputs:
+      versionSpec: '17'
+      jdkArchitectureOption: 'x64'
+      jdkSourceOption: 'PreInstalled'
+
+  - script: |
+      cat <<EOF > secrets.properties
+      BASE_URL_DEV=
+      BASE_URL_QA=
+      BASE_URL_PROD=
+      MAPS_API_KEY=
+      EOF
+    displayName: 'Create secrets.properties'
+
+  - script: chmod +x gradlew
+    displayName: 'Configure Gradle Wrapper'
+
+  - script: ./gradlew :androidApp:assembleDebug
+    displayName: 'Build Android Debug'

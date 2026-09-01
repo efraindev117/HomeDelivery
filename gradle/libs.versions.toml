@@ -32,6 +32,7 @@ mapsCompose = "4.3.0"
 # iOS (Versión del Pod de Google Maps)
 googleMaps = "9.0.0"
 kotlinx-coroutines = "1.11.0"
+msal = "8.4.1"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -99,6 +100,8 @@ kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutine
 material-icons-extended = { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
 
 
+microsoft-msal = { module = "com.microsoft.identity.client:msal", version.ref = "msal" }
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
@@ -112,24 +115,24 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
 # KMP
-ieu-kotlin-multiplatform = { id = "xsoft.homedelivery.kotlin.multiplatform" }
-ieu-android-kmp-library = { id = "xsoft.homedelivery.android.kmp.library" }
+ieu-kotlin-multiplatform = { id = "maypo.homedelivery.kotlin.multiplatform" }
+ieu-android-kmp-library = { id = "maypo.homedelivery.android.kmp.library" }
 
 # Compose
-ieu-compose-multiplatform = { id = "xsoft.homedelivery.compose.multiplatform" }
+ieu-compose-multiplatform = { id = "maypo.homedelivery.compose.multiplatform" }
 
 # Android only
-ieu-android-application = { id = "xsoft.homedeliveryandroid.application" }
-ieu-android-application-compose = { id = "xsoft.homedelivery.android.application.compose" }
-ieu-android-library = { id = "xsoft.homedelivery.android.library" }
-ieu-android-library-compose = { id = "xsoft.homedelivery.android.library.compose" }
-ieu-android-feature = { id = "xsoft.homedelivery.android.feature" }
+ieu-android-application = { id = "maypo.homedeliveryandroid.application" }
+ieu-android-application-compose = { id = "maypo.homedelivery.android.application.compose" }
+ieu-android-library = { id = "maypo.homedelivery.android.library" }
+ieu-android-library-compose = { id = "maypo.homedelivery.android.library.compose" }
+ieu-android-feature = { id = "maypo.homedelivery.android.feature" }
 
 # External plugins
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 androidx-room = { id = "androidx.room", version.ref = "room" }
 
 # Project convention plugins
-ieu-ksp = { id = "xsoft.homedelivery.ksp" }
-ieu-room = { id = "xsoft.homedelivery.room" }
-ieu-koin = { id = "xsoft.homedelivery.koin" }
+ieu-ksp = { id = "maypo.homedelivery.ksp" }
+ieu-room = { id = "maypo.homedelivery.room" }
+ieu-koin = { id = "maypo.homedelivery.koin" }

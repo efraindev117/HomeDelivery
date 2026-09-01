@@ -1,10 +1,10 @@
 package com
 
 import com.android.build.api.dsl.ApplicationExtension
-import com.xsoft.convention.library
-import com.xsoft.convention.libs
-import com.xsoft.convention.pluginId
-import com.xsoft.convention.versionInt
+import com.maypo.convention.library
+import com.maypo.convention.libs
+import com.maypo.convention.pluginId
+import com.maypo.convention.versionInt
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -18,10 +18,10 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
         pluginManager.apply(libs.pluginId("androidApplication"))
 
         extensions.configure<ApplicationExtension> {
-            namespace = "com.xsoft.homedelivery"
+            namespace = "com.maypo.homedelivery"
             compileSdk = libs.versionInt("android-compileSdk")
             defaultConfig {
-                applicationId = "com.xsoft.homedelivery"
+                applicationId = "com.maypo.homedelivery"
                 minSdk = libs.versionInt("android-minSdk")
                 targetSdk = libs.versionInt("android-targetSdk")
                 versionCode = 1

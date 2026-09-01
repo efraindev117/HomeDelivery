@@ -1,30 +1,22 @@
 plugins {
-    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.ieu.kotlin.multiplatform)
+    alias(libs.plugins.ieu.koin)
 }
 
-android {
-    namespace = "com.xsoft.domain"
-    compileSdk {
-        version = release(36)
+kotlin {
+    android {
+        namespace = "com.maypo.domain"
     }
+    sourceSets{
+        commonMain.dependencies {
+            implementation(projects.core.common)
+            implementation(projects.core.data)
+        }
+        androidMain.dependencies {
 
-    defaultConfig {
-        minSdk = 29
+        }
+        iosMain.dependencies {
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-
-}
-
-dependencies {
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(libs.androidx.testExt.junit)
 }
