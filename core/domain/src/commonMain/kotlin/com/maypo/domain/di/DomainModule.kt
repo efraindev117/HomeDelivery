@@ -1,6 +1,7 @@
 package com.maypo.domain.di
 
 import com.maypo.domain.auth.AuthUsesCase
+import com.maypo.domain.support.GetSupportContentUseCase
 import org.koin.dsl.module
 
 val domainModule = module {
@@ -12,4 +13,5 @@ val domainModule = module {
             signOut = get()
         )
     }
+    factory { GetSupportContentUseCase(supportRepository = get()) }
 }
